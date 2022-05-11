@@ -1,4 +1,4 @@
-import { FeaturesComponent } from './features/features.component';
+import { FeaturesComponent } from '../../list/features/features.component';
 import { NewsComponent } from './news/news.component';
 import { TablesiteComponent } from './tablesite/tablesite.component';
 import { NgModule } from '@angular/core';

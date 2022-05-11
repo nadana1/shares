@@ -1,3 +1,5 @@
+import { AccountService } from './service/account.service';
+import { User } from './user';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -13,8 +15,9 @@ import { SeoService } from './@core/utils/seo.service';
   template: '<router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
-  
-  constructor(private analytics: AnalyticsService, private seoService: SeoService) {
+  user: User;
+  constructor(private analytics: AnalyticsService, private seoService: SeoService,private accountService: AccountService) {
+    this.accountService.user.subscribe(x =>this.user  = x);
   }
 
   ngOnInit(): void {

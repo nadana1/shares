@@ -1,3 +1,5 @@
+import { DashboardModule } from './dashboard/dashboard.module';
+import { TablesModule } from './tables/tables.module';
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
 
@@ -11,7 +13,9 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 @NgModule({
   imports: [
     PagesAdminRoutingModule,
+    DashboardModule,
     ThemeModule,
+    TablesModule,
     NbMenuModule,
     AdmindashboardModule,
     ECommerceModule,

@@ -1,11 +1,12 @@
+import { FeaturesComponent } from '../list/features/features.component';
 import { DashComponent } from './admindashboard/dash/dash.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesAdminComponent } from './pagesAdmin.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { SiteListComponent } from '../list/site-list/site-list.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,6 +16,17 @@ const routes: Routes = [{
       path: 'dashboard',
       component: ECommerceComponent,
     },
+    {
+      path:'features',
+      component:FeaturesComponent
+  
+    },
+    {
+      path:'site',
+      component:SiteListComponent
+  
+    },
+    
     {
       path: 'dash',
       component: DashComponent,
@@ -69,11 +81,7 @@ const routes: Routes = [{
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
         .then(m => m.MiscellaneousModule),
     },
-    {
-      path: '',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
-    },
+    
     
     {
       path: '**',

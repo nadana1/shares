@@ -1,3 +1,6 @@
+import { RegisterComponent } from './users/register/register.component';
+import { LoginComponent } from './login/login.component';
+import { UserListComponent } from './@core/mock/userList.component';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -20,6 +23,10 @@ export const routes: Routes = [
       .then(m => m.PagesModule),
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     
     path: 'pagesadmin',
     loadChildren: () => import('./pages/pagesAdmin.module')
@@ -39,8 +46,8 @@ export const routes: Routes = [
         component: NbLoginComponent,
       },
       {
-        path: 'login',
-        component: NbLoginComponent,
+        path: 'loginv',
+        component: LoginComponent,
       },
       {
         path: 'register',
@@ -58,17 +65,25 @@ export const routes: Routes = [
         path: 'reset-password',
         component: NbResetPasswordComponent,
       },
+     
       
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  
+  {
+    path: 'users',
+    component: UserListComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  
+  
 ];
-
 const config: ExtraOptions = {
   useHash: false,
 };
-
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule],

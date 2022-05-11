@@ -14,7 +14,7 @@ html {
 
 body {
   line-height: 1.6;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Times New Roman';
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   color: #6F8BA4;
@@ -127,6 +127,17 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   color: #fff;
   border-color: #e12454;
 }
+#textlogo{
+  font-size:x-large;
+  color:#0D2B7D;
+  font-family:'Times New Roman';
+  font-style:inherit;
+  font-display:inherit;
+}
+.entete{
+  color:#0D2B7D;
+}
+
 
 .btn-main-2:hover {
   background: #223a66;
@@ -1386,6 +1397,10 @@ a:focus {
 .logo {
   font-weight: 600;
   letter-spacing: 1px;
+  
+  width:40%;
+  height:40%;
+  
 }
 
 .logo h3 {

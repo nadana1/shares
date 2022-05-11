@@ -1,3 +1,7 @@
+import { SiteListComponent } from './list/site-list/site-list.component';
+
+import { RegisterComponent } from './users/register/register.component';
+import { UserListComponent } from './@core/mock/userList.component';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -5,13 +9,13 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
-import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -22,14 +26,20 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UserService } from './user-service.service';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { FeaturesComponent } from './list/features/features.component';
+
 
 
 
 @NgModule({
   
   
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [AppComponent, LandingPageComponent,UserListComponent,RegisterComponent,SiteListComponent,LoginComponent],
   imports: [
+    
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -45,10 +55,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
-    
+    FormsModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA],
   
+  schemas: [CUSTOM_ELEMENTS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

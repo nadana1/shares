@@ -1,10 +1,22 @@
-<nb-card>
-  <nb-card-header>
-    Smart Table
-  </nb-card-header>
 
+<nb-card>
+  
+    
   <nb-card-body>
-    <ng2-smart-table [settings]="settings" (deleteConfirm)="onDeleteConfirm($event)">
-    </ng2-smart-table>
+    <div class="card my-5">
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              
+            </tr>
+          </thead>
+          
+        </table>
+      </div>
+      </div>
   </nb-card-body>
 </nb-card>

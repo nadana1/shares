@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
+import { SiteListComponent } from '../list/site-list/site-list.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -63,6 +64,7 @@ const routes: Routes = [{
       loadChildren: () => import('./tables/tables.module')
         .then(m => m.TablesModule),
     },
+    
     {
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
@@ -83,6 +85,7 @@ const routes: Routes = [{
       component: NotFoundComponent,
     },
   ],
+ 
 }];
 
 @NgModule({

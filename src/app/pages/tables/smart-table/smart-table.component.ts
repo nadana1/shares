@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LocalDataSource } from 'ng2-smart-table';
+
+import { SmartTableData } from '../../../@core/data/smart-table';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./smart-table.component.scss'],
 })
 export class SmartTableComponent implements OnInit {
-  users : any ;
+
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -29,11 +31,11 @@ export class SmartTableComponent implements OnInit {
         type: 'number',
       },
       firstName: {
-        title: 'Name',
+        title: 'company name',
         type: 'string',
       },
       lastName: {
-        title: 'Mail',
+        title: 'Domain',
         type: 'string',
       },
      
@@ -52,11 +54,11 @@ export class SmartTableComponent implements OnInit {
     },
   };
 
+  source: LocalDataSource = new LocalDataSource();
 
-
-  constructor(private http:HttpClient) {
-    let response= this.http.get("http://localhost:8080/api/v1/users");
-    response.subscribe((data)=>this.users=response)
+  constructor(private service: SmartTableData) {
+    const data = this.service.getData();
+    this.source.load(data);
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');

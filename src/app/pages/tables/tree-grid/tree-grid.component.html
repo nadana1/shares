@@ -1,34 +1,22 @@
+
 <nb-card>
+  
+    
   <nb-card-body>
-
-    <label class="search-label" for="search">Search:</label>
-    <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input">
-
-    <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
-
-      <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
-      <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
-
-      <ng-container [nbTreeGridColumnDef]="customColumn">
-        <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
-          {{customColumn}}
-        </th>
-        <td nbTreeGridCell *nbTreeGridCellDef="let row">
-          <ngx-fs-icon [kind]="row.data.kind" [expanded]="row.expanded"></ngx-fs-icon>
-          {{row.data[customColumn]}}
-        </td>
-      </ng-container>
-
-      <ng-container *ngFor="let column of defaultColumns; let index = index"
-                    [nbTreeGridColumnDef]="column"
-                    [showOn]="getShowOn(index)">
-        <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
-          {{column}}
-        </th>
-        <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
-      </ng-container>
-
-    </table>
-
+    <div class="card my-5">
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              
+            </tr>
+          </thead>
+          
+        </table>
+      </div>
+      </div>
   </nb-card-body>
 </nb-card>

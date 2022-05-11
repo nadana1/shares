@@ -17,7 +17,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'SITE',
-        link: '/pagesadmin/tables/site',
+        link: '/list/site-list',
       },
       {
         title: 'Downloads',
@@ -25,7 +25,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Features',
-        link: '/pagesadmin/tables/features',
+        link: '/list/features',
       },
       {
         title: 'News',
