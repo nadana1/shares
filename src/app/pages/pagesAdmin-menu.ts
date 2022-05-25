@@ -20,6 +20,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/list/site-list',
       },
       {
+        title: 'Confirm Site',
+        link: '/list/confirmesite',
+      },
+      {
+        title: 'Keyword',
+        link: '/list/keyword',
+      },
+      {
+        title: 'Users',
+        link: '/list/users'
+      },
+      {
         title: 'Downloads',
         link: '/pages/tables/tree-grid',
       },

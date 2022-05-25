@@ -1,3 +1,5 @@
+import { KeywordComponent } from './../list/keyword/keyword.component';
+import { ConfirmesiteComponent } from './../list/confirmesite/confirmesite.component';
 import { FeaturesComponent } from '../list/features/features.component';
 import { DashComponent } from './admindashboard/dash/dash.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,6 +9,7 @@ import { PagesAdminComponent } from './pagesAdmin.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { SiteListComponent } from '../list/site-list/site-list.component';
+import { UsersComponent } from '../list/users/users.component';
 
 const routes: Routes = [{
   path: '',
@@ -24,6 +27,21 @@ const routes: Routes = [{
     {
       path:'site',
       component:SiteListComponent
+  
+    },
+    {
+      path:'confirmesite',
+      component:ConfirmesiteComponent
+  
+    },
+    {
+      path:'keyword',
+      component:KeywordComponent
+  
+    },
+    {
+      path:'users',
+      component:UsersComponent
   
     },
     

@@ -30,6 +30,10 @@ import { UserService } from './user-service.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { FeaturesComponent } from './list/features/features.component';
+import { ConfirmesiteComponent } from './list/confirmesite/confirmesite.component';
+import { KeywordComponent } from './list/keyword/keyword.component';
+import { UsersComponent } from './list/users/users.component';
+import { LoginnComponent } from './loginn/loginn.component';
 
 
 
@@ -37,7 +41,7 @@ import { FeaturesComponent } from './list/features/features.component';
 @NgModule({
   
   
-  declarations: [AppComponent, LandingPageComponent,UserListComponent,RegisterComponent,SiteListComponent,LoginComponent],
+  declarations: [AppComponent, LandingPageComponent,UserListComponent,RegisterComponent,SiteListComponent,LoginComponent, ConfirmesiteComponent, KeywordComponent, UsersComponent, LoginnComponent],
   imports: [
     
     BrowserModule,
